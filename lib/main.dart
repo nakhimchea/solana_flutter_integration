@@ -25,14 +25,14 @@ class _HomePageState extends State<HomePage> {
       );
       debugPrint("<<<<<<< Start InterSOL >>>>>>>");
       debugPrint("Lamport per SOL: $lamportsPerSol\n");
-      final Ed25519HDKeyPair payer =
-          await Ed25519HDKeyPair.fromMnemonic('I am Mr. Boi Loy');
+      final Ed25519HDKeyPair payer = await Ed25519HDKeyPair.fromMnemonic(
+          'mad pony price voice infant ask next food gift aerobic analyst erode');
       final Ed25519HDKeyPair payee =
           await Ed25519HDKeyPair.fromMnemonic('I am Mr. Yor Loy');
-      // final Ed25519HDKeyPair mintAuth =
-      //     await Ed25519HDKeyPair.fromMnemonic('I am a mint authority');
-      // final Ed25519HDKeyPair freezeAuth =
-      //     await Ed25519HDKeyPair.fromMnemonic('I am a freeze authority');
+      final Ed25519HDKeyPair mintAuth = await Ed25519HDKeyPair.fromMnemonic(
+          'sting educate toward clump hammer seek move bone minimum vacuum category link');
+      final Ed25519HDKeyPair freezeAuth = await Ed25519HDKeyPair.fromMnemonic(
+          'sting educate toward clump hammer seek move bone minimum vacuum category link');
       debugPrint("Loading Wallet Successfully.\n");
       // debugPrint("Requesting Airdrop...");
       // await connection.requestAirdrop(
@@ -60,11 +60,13 @@ class _HomePageState extends State<HomePage> {
       debugPrint("Payer Balance: $payerBalance");
       debugPrint("Payee Account: ${payee.publicKey}");
       debugPrint("Payee Balance: $payeeBalance\n");
+      debugPrint("MintAuth Account: ${mintAuth.publicKey}");
+      debugPrint("FreezeAuth Account: ${freezeAuth.publicKey}");
 
       debugPrint("Initialize Token...");
       final Mint token = await solanaClient.getMint(
         address: Ed25519HDPublicKey.fromBase58(
-          'BkZ4sg2u2gguAqspR58jFNKH9hiuLM3xGYxvrWqw2VpY',
+          'DbrcZHx94cW1SciQYNybbavkzsom4qE9wmKjF8znvksS',
         ),
         commitment: Commitment.confirmed,
       );
